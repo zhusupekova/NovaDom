@@ -1,11 +1,11 @@
 const rates = {
-  cosmetic: 9500,
-  comfort: 12100,
-  capital: 13900,
-  design: 18000,
+  cosmetic: 3500,
+  comfort: 5500,
+  capital: 7500,
+  design: 11000,
 };
 
-const formatMoney = (value) => `${value.toLocaleString("ru-RU")} ₽`;
+const formatMoney = (value) => `${value.toLocaleString("ru-RU")} сом`;
 
 function updateEstimate() {
   const area = Number(document.querySelector("#area").value || 0);
@@ -16,8 +16,8 @@ function updateEstimate() {
 
   const base = area * rates[repair];
   const typeMultiplier = homeType === "secondary" ? 1.14 : 1;
-  const materialCost = materials ? area * 6200 : 0;
-  const designCost = design ? area * 2800 : 0;
+  const materialCost = materials ? area * 3500 : 0;
+  const designCost = design ? area * 1800 : 0;
   const total =
     Math.round((base * typeMultiplier + materialCost + designCost) / 10000) *
     10000;

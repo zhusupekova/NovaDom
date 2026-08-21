@@ -3,10 +3,10 @@
 import { useMemo, useState } from "react";
 
 const repairRates: Record<string, number> = {
-  cosmetic: 9500,
-  comfort: 12100,
-  capital: 13900,
-  design: 18000,
+  cosmetic: 3500,
+  comfort: 5500,
+  capital: 7500,
+  design: 11000,
 };
 
 const repairLabels: Record<string, string> = {
@@ -26,8 +26,8 @@ export default function RepairCalculator() {
   const estimate = useMemo(() => {
     const base = area * repairRates[repair];
     const typeMultiplier = homeType === "secondary" ? 1.14 : 1;
-    const materialCost = materials ? area * 6200 : 0;
-    const designCost = design ? area * 2800 : 0;
+    const materialCost = materials ? area * 3500 : 0;
+    const designCost = design ? area * 1800 : 0;
     const total =
       Math.round((base * typeMultiplier + materialCost + designCost) / 10000) *
       10000;
@@ -117,7 +117,7 @@ export default function RepairCalculator() {
         <span>Предварительная стоимость</span>
         <strong>
           {estimate.low.toLocaleString("ru-RU")} -{" "}
-          {estimate.high.toLocaleString("ru-RU")} ₽
+          {estimate.high.toLocaleString("ru-RU")} сом
         </strong>
         <p>
           Ориентировочный срок: от {estimate.days} дней. Точность онлайн-расчета

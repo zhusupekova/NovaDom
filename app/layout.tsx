@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NovaDom | Ремонт квартир под ключ в Москве",
+  title: "NovaDom | Ремонт квартир под ключ в Бишкеке",
   description:
     "Современный сайт компании по ремонту квартир: калькулятор стоимости, портфолио, тарифы, этапы работ и заявка на смету.",
   icons: {
